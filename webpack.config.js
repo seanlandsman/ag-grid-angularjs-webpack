@@ -22,7 +22,15 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/configuration.html
    * This is the object where all configuration gets set
    */
-  var config = {};
+  var config = {
+    resolve: {
+      alias: {
+        // explicitly specify/pull in the ESM versions of AG Grid
+        'ag-grid-community': 'ag-grid-community/dist/ag-grid-community.esm.min.js',
+        'ag-grid-enterprise': 'ag-grid-enterprise/dist/ag-grid-enterprise.esm.min.js'
+      }
+    }
+  };
 
   /**
    * Entry

@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import {initialiseAgGridWithAngular1, ModuleRegistry, ClientSideRowModelModule} from "ag-grid-enterprise/dist/ag-grid-enterprise.esm.js";
+import {initialiseAgGridWithAngular1, ModuleRegistry, ClientSideRowModelModule} from "ag-grid-enterprise";
 
 import '../style/app.css';
 
@@ -43,6 +43,6 @@ const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, ['agGrid'])
     .directive('app', app)
-    .controller('AppCtrl', AppCtrl);
+    .controller('AppCtrl', ['$scope', AppCtrl]);
 
 export default MODULE_NAME;
